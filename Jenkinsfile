@@ -19,7 +19,6 @@ node('master') {
 	    }	
         notify('success')
     } catch (err) {
-      notify("Error ${err}")
       echo "Caught: ${err}"
       currentBuild.rsult = 'FAILURE'
     }
