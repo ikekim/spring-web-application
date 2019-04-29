@@ -5,7 +5,7 @@ pipeline {
         stage('Build/ Unit Testing') {
             steps {
                 sh 'echo build'
+                }
             }
-        }
-   
+        )
     }
