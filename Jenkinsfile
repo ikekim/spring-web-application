@@ -1,10 +1,10 @@
 pipeline {
     agent any
-        stages {
-           stage('Build/ Unit Testing') {
+    stages{
+        stage('Fetch Project'){
             steps {
-                sh 'echo build'
-                }
+                echo 'testing...'
             }
-        )
+        }
     }
+}
