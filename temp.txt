@@ -1,0 +1,22 @@
+pipeline {
+  agent any
+  stages {
+    stage('Source') { 
+      steps {
+        git 'https://github.com/ikekim/spring-web-application.git'
+        result = sh (script: "git log -1 | grep '\\[ci skip\\]'", returnStatus: true) 
+        if (result != 0) {
+            echo "performing build..."
+        } else {
+            echo "not running..."
+        }
+      }
+    }
+  }
+  post { 
+    always { 
+        echo "test"
+        //cleanWs()
+    }
+  }
+}
